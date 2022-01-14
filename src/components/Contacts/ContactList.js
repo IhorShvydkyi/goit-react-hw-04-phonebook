@@ -1,7 +1,7 @@
 import ContactItem from "./ContatctItem";
 import PropTypes from "prop-types";
 import { ContactListStyled } from "./ContactList.styled";
-function ContactList({ contacts, onDeleteContact }) {
+function ContactList({ contacts, toDeleteContact }) {
   return (
     <ContactListStyled>
       {contacts.map(({ id, name, number }) => (
@@ -10,7 +10,7 @@ function ContactList({ contacts, onDeleteContact }) {
           id={id}
           name={name}
           number={number}
-          onDeleteContact={onDeleteContact}
+          toDeleteContact={toDeleteContact}
         />
       ))}
     </ContactListStyled>
@@ -18,5 +18,3 @@ function ContactList({ contacts, onDeleteContact }) {
 }
 
 export default ContactList;
-
-ContactList.propTypes = { contacts: PropTypes.array };
